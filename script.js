@@ -19,18 +19,19 @@ async function searchMovies(e) {
  
         if (result.poster_path) {
             const move = document.createElement("div");
-            move.classList="the"
+            move.classList.add("the")
             const img = document.createElement("img");
-            img.classList="box"
+            img.classList.add("box")
             const heading = document.createElement("h3");
 
             heading.classList="name"
+            heading.innerText = result.title
+
 
             img.src = Image_base_path + result.poster_path;
-            movie.appendChild(img);
-            movie.appendChild(move);  
-            heading.innerText = result.title
-            move.append(heading)
+            move.append(img,heading);
+            movie.append(move)
+            
         }
     }
 
